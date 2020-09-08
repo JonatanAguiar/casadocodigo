@@ -35,6 +35,16 @@ public class Produto {
         this.dataLancamento = dataLancamento;
     }
     
+    private String sumario;
+    
+	public String getSumario() {
+		return sumario;
+	}
+
+	public void setSumario(String sumario) {
+		this.sumario = sumario;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
