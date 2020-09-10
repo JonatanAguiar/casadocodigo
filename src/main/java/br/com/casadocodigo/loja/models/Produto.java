@@ -27,6 +27,8 @@ public class Produto {
 	@ElementCollection
 	private List<Preco> precos;
 
+	private String sumarioPath;
+
 	public Calendar getDataLancamento() {
         return dataLancamento;
     }
@@ -35,14 +37,13 @@ public class Produto {
         this.dataLancamento = dataLancamento;
     }
     
-    private String sumario;
     
-	public String getSumario() {
-		return sumario;
+	public String getSumarioPath() {
+		return sumarioPath;
 	}
-
-	public void setSumario(String sumario) {
-		this.sumario = sumario;
+	
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 
 	public String getTitulo() {
