@@ -37,7 +37,9 @@
 				<nav id="main-nav">
 
 					<ul class="clearfix">
-						<li><a href="/carrinho" rel="nofollow">Carrinho</a></li>
+						<li>
+							<a href="/carrinho" rel="nofollow">Seu Carrinho (${carrinhoCompras.quantidade })</a>
+						</li>
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
 						<li><a href="/pages/perguntas-frequentes" rel="nofollow">Perguntas Frequentes</a></li>
 					</ul>
@@ -70,9 +72,8 @@
 				<p class="book-description">${produto.descricao }</p>
 			</div>
 		</header>
-
 		<section class="buy-options clearfix">
-			<form action="/carrinho/add" method="post" class="container">
+			<form action='<c:url value="/carrinho/add" />' method="post" class="container">
 				<input type="hidden" value="${produto.id }" name="produtoId" >
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${produto.precos }" var="preco">
@@ -87,7 +88,6 @@
 				<button type="submit" class="submit-image icon-basket-alt" title="Compre Agora ${produto.titulo }"></button>
 			</form>
 		</section>
-
 		<div class="container">
 			<section class="summary">
 				<ul>
@@ -103,9 +103,9 @@
 					Número de páginas: <span>${produto.paginas}</span>
 				</p>
 				<p></p>
-				<p>Data de publicação: <span class="publishedAt">
-					<fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento }"/>
-				</span> </p>
+				<p>Data de publicação: 
+					<span><fmt:formatDate value="${produto.dataLancamento.time }" pattern="dd/MM/yyyy"/></span>
+				</p>
 				<p>
 					Encontrou um erro? <a href='/submissao-errata' target='_blank'>Submeta uma errata</a>
 				</p>
